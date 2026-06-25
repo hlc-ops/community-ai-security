@@ -1,0 +1,80 @@
+# ===== 敏感配置 =====
+.env
+.env.local
+.env.production
+*.key
+secrets.json
+credentials.json
+# 显式允许 .env.example(给读者看配置格式)
+!.env.example
+
+# ===== 数据集(超大,GitHub Release 单独分发)=====
+dataset/images/raw/
+dataset/images/train/
+dataset/images/val/
+dataset/images/test/
+dataset/labels/train/
+dataset/labels/val/
+dataset/labels/test/
+dataset/*.zip
+dataset/COLLECTION_LOG.md
+
+# ===== 运行数据 =====
+data/
+uploads/
+*.log
+
+# ===== 模型文件 =====
+runs/
+*.pt
+*.pth
+*.weights
+# OpenVINO 产物(很大,运行时再导)
+model/best_openvino_model/
+model/best_openvino_model_fp32/
+model/best_int8_openvino_model/
+*.xml
+*.bin
+# 显式允许 best.onnx 上传作展示(43MB,通用部署格式)
+!model/best.onnx
+!model/args.yaml
+
+# ===== 临时 / 调试产物 =====
+_v3_regression_out*/
+_v2_regression_out*/
+_v3_unpack/
+_v2_unpack/
+_visdrone_*/
+_temp_extract/
+_processed/
+_sophon_*.sh
+rknn_calib_list.txt
+doubao*/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# ===== 前端 =====
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===== Label Studio =====
+.label_studio/
+label_studio_data/
+
+# ===== IDE / 系统 =====
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ===== Claude Code =====
+.claude/
