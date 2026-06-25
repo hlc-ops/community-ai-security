@@ -1,0 +1,259 @@
+/**
+ * 智慧社区 · 设计令牌 v2.0
+ * 风格:亮主区 + 暗侧栏(Notion / Vercel / Linear Dashboard 经典布局)
+ *
+ * 主区:纯白 + 极浅灰,克制商务感
+ * 侧栏:深蓝灰,层次差异
+ *
+ * 改这一个文件 = 改全站观感
+ */
+
+/* ===== 字体引入(国际感关键)===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ===========================================
+     主区:亮色系统(纯白 + 极浅灰)
+     =========================================== */
+
+  /* ---- 背景层次(亮色 4 层)---- */
+  --bg-base:       #fafbfc;             /* L0 页面底:极浅冷灰 */
+  --bg-surface:    #ffffff;             /* L1 卡片:纯白 */
+  --bg-elevated:   #f5f7fa;             /* L2 浮起/输入框 */
+  --bg-overlay:    rgba(15, 23, 42, 0.03); /* L3 hover 半透明 */
+  --bg-blur:       rgba(255, 255, 255, 0.92); /* 玻璃半透明 */
+
+  /* 兼容老命名 */
+  --bg:            var(--bg-base);
+  --surface:       var(--bg-surface);
+
+  /* ---- 品牌主色(青绿渐变,在白底上效果更佳)---- */
+  --brand:         #16b3a8;             /* 主色,微调饱和度适配亮底 */
+  --brand-2:       #138c84;             /* hover/active */
+  --brand-3:       #0e6963;             /* 按下 */
+  --brand-soft:    rgba(22, 179, 168, 0.08);
+  --brand-line:    rgba(22, 179, 168, 0.2);
+  --brand-glow:    rgba(22, 179, 168, 0.25);
+  --brand-gradient: linear-gradient(135deg, #16b3a8 0%, #138c84 100%);
+
+  /* ---- 辅助色 ---- */
+  --accent-blue:   #3b82f6;
+  --accent-gold:   #f59e0b;
+  --accent-purple: #8b5cf6;
+
+  /* ---- 状态色(亮底友好,饱和度收一档)---- */
+  --danger:        #ef4444;
+  --warning:       #f59e0b;
+  --success:       #16b3a8;
+  --info:          #3b82f6;
+  --danger-bg:     rgba(239, 68, 68, 0.08);
+  --warning-bg:    rgba(245, 158, 11, 0.08);
+  --success-bg:    rgba(22, 179, 168, 0.08);
+  --info-bg:       rgba(59, 130, 246, 0.08);
+
+  /* ---- 文字层次(暗字在白底上)---- */
+  --text:          #0f172a;             /* 主文字,极深 */
+  --text-2:        #475569;             /* 次文字 */
+  --text-3:        #94a3b8;             /* 辅助 */
+  --text-disabled: #cbd5e1;
+  --text-inverse:  #ffffff;
+
+  /* ---- 边框(极浅灰)---- */
+  --border:        #e5e7eb;
+  --border-strong: #d1d5db;
+  --divider:       #f1f5f9;
+  --border-brand:  rgba(22, 179, 168, 0.25);
+
+  /* ===========================================
+     侧栏:暗色系统(保留 v1.0 暗色)
+     =========================================== */
+  --side-bg:       #08121f;
+  --side-bg-2:     #050b14;
+  --side-text:     #d4dce0;
+  --side-muted:    #64748b;
+  --side-active:   rgba(78, 205, 196, 0.12);
+  --side-hover:    rgba(255, 255, 255, 0.04);
+  --side-active-line: #4ecdc4;
+  --side-brand:    #4ecdc4;  /* 侧栏内部仍用更亮的青绿 */
+
+  /* ===========================================
+     阴影(亮底用阴影制造层次)
+     =========================================== */
+  --shadow-1:      0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-2:      0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-3:      0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-glow:   0 0 24px rgba(22, 179, 168, 0.15);
+  --shadow-card-hover: 0 8px 24px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(22, 179, 168, 0.2);
+
+  /* 渐变光晕(卡片右上角的氛围,白底上更克制)*/
+  --gradient-mesh: radial-gradient(ellipse at top right,
+                     rgba(22, 179, 168, 0.06),
+                     transparent 60%);
+
+  /* ===========================================
+     圆角(克制,商务感)
+     =========================================== */
+  --radius-xs:     4px;
+  --radius-sm:     6px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+  --radius-xl:     16px;
+  --radius-full:   9999px;
+
+  --radius-1:      var(--radius-xs);
+  --radius-2:      var(--radius-sm);
+  --radius-3:      var(--radius-lg);
+
+  /* ===========================================
+     间距
+     =========================================== */
+  --space-1:       4px;
+  --space-2:       8px;
+  --space-3:       12px;
+  --space-4:       16px;
+  --space-5:       20px;
+  --space-6:       24px;
+  --space-7:       28px;
+  --space-8:       32px;
+  --space-10:      40px;
+  --space-12:      48px;
+  --space-16:      64px;
+  --space-20:      80px;
+
+  /* ===========================================
+     字体
+     =========================================== */
+  --font-sans:     "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC",
+                   "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+  --font-mono:     "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xs:         11px;
+  --fs-sm:         12px;
+  --fs-base:       13px;
+  --fs-md:         14px;
+  --fs-lg:         16px;
+  --fs-xl:         20px;
+  --fs-2xl:        28px;
+  --fs-3xl:        38px;
+  --fs-hero:       56px;
+
+  --fw-light:      300;
+  --fw-normal:     400;
+  --fw-medium:     500;
+  --fw-semibold:   600;
+  --fw-bold:       700;
+
+  --line-tight:    1.25;
+  --line-base:     1.55;
+  --line-relaxed:  1.75;
+
+  --letter-tight:  -0.02em;
+  --letter-normal: 0;
+  --letter-wide:   0.05em;
+
+  /* ===========================================
+     动效
+     =========================================== */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast:    150ms;
+  --duration-base:    250ms;
+  --duration-slow:    400ms;
+  --duration-slower:  600ms;
+
+  /* ===========================================
+     z-index
+     =========================================== */
+  --z-dropdown:    1000;
+  --z-sticky:      1020;
+  --z-fixed:       1030;
+  --z-modal:       1040;
+  --z-popover:     1050;
+  --z-toast:       1060;
+}
+
+/* ===== 全局基础 ===== */
+html, body {
+  background: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--line-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: var(--letter-normal);
+}
+
+.num, .mono, .data-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--letter-tight);
+}
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(15, 23, 42, 0.2); }
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+/* ===== 关键动画 ===== */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(22, 179, 168, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(22, 179, 168, 0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ===== 工具类 ===== */
+.glass-card {
+  background: var(--bg-blur);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.gradient-bg {
+  background-image: var(--gradient-mesh);
+}
+
+.fade-in {
+  animation: fade-in-up var(--duration-slow) var(--ease-out) both;
+}
+
+.pulse {
+  animation: pulse-glow 2s var(--ease-smooth) infinite;
+}
