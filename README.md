@@ -12,6 +12,35 @@
 
 ---
 
+## 📸 系统截图
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-01.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-02.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-03.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-04.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-05.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-06.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-07.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-08.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-09.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-10.png" width="100%"/></td>
+  </tr>
+</table>
+
+> 完整演示视频(系统操作流程,约 1-2 分钟)请见 [B 站 / YouTube 链接 — 待补]
+
+---
+
 ## 项目定位
 
 面向**物业 + 社区**场景的 AI 视频安防系统,商业目标:替代物业人工巡检,自动发现违停、乱丢垃圾、宠物闯入、明火、电瓶车进电梯等违规并联动工单 + 居民端通知。
