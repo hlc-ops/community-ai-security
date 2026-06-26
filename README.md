@@ -37,7 +37,7 @@
   </tr>
 </table>
 
-> 完整演示视频(系统操作流程,约 1-2 分钟)请见 [B 站 / YouTube 链接 — 待补]
+> 🎬 **完整演示视频(B 站)**:https://www.bilibili.com/video/BV1127V6FE9G/
 
 ---
 
